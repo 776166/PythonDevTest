@@ -1,0 +1,32 @@
+<table class="table">
+	<tr>
+		<td>ID:</td>
+		<td>{{ c.id }}</td>
+	</tr>
+	<tr>
+		<td>Name:</td>
+		<td>{{ c.name }}</td>
+	</tr>
+	<tr>
+		<td>Company:</td>
+		<td>{{ c.company }}</td>
+	</tr>
+	<tr>
+		<td>Email:</td>
+		<td><a href="{{ c.email }}">{{ c.email }}</a></td>
+	<tr>
+		<td>Phone:</td>
+		<td>{% if c.phone %}<a href="tel:{{ c.phone }}">{{ c.phone }}</a>{% endif %}</td>
+	<tr>
+		<td>Interests:</td>
+		<td>{{ c.interest }}</td>
+	</tr>
+	<tr>
+		<td>Created:</td>
+		<td>{{ c.created_at }}</td>
+	</tr>
+	<tr>
+		<td>Updated:</td>
+		<td>{{ c.updated_at }}</td>
+	</tr>
+</table>

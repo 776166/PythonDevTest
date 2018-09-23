@@ -1,0 +1,19 @@
+{% extends "layouts/contacts-base.html" %}
+{% load staticfiles %}
+
+{% block page_title %}Import Contacts{% endblock page_title %}
+
+{% block "content" %}
+<h1>Import Contacts</h1>
+<p>Only CSV and JSON files allowed.</p>
+<p><a href="{% static 'data/contacts-import.csv' %}">CSV</a>/<a href="{% static 'data/contacts-import.json' %}">JSON</a> examples</p>
+<div class="row">
+	<div class="col">
+		<form method="post" action="{% url 'contacts:import' %}" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{ form.as_table }}
+			<button type="submit" class="btn btn-primary">Import</button>
+		</form>
+	</div>
+</div>
+{% endblock "content" %}

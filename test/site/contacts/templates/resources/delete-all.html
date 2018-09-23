@@ -1,0 +1,12 @@
+{% extends "layouts/contacts-base.html" %}
+
+{% block page_title %}Delete all contact{% endblock page_title %}
+
+{% block "content" %}
+<h1>Delete call contacts</h1>
+<form method="post" action="{% url 'contacts:delete_all' %}">
+	{% csrf_token %}
+	<table class="table">{{ form.as_table }}</table>
+	<button type="submit" class="btn btn-danger">Delete all</button>
+</form>
+{% endblock "content" %}

@@ -1,0 +1,19 @@
+{% extends 'layouts/base.html' %}
+
+{% block "content" %}
+<h1>5 базовых ценностей BREFFI</h1>
+<div class="row worth">
+	{% for w in worth %}
+	<div class="col-4">
+		<span class="num">0{{ forloop.counter }}</span>
+		<span class="title">{{ w.title }}</span>
+		<span class="text">{{ w.text }}</span>
+	</div>
+	{% endfor %}
+	<div class="col-4">
+		<span class="num">06</span>
+		<span class="title">Рекламное место сдаётся!</span>
+		<span class="text">СТАВКИ НА СПОРТ! 1XBET! Большие выигрыши! 1XBET!</span>
+	</div>
+</div>
+{% endblock "content" %}

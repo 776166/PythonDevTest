@@ -1,0 +1,13 @@
+{% extends "layouts/contacts-base.html" %}
+{% load staticfiles %}
+
+{% block page_title %}Update {{ c.name }}{% endblock page_title %}
+
+{% block "content" %}
+<h1>Update {{ c.name }}</h1>
+<form method="post" action="{% url 'contacts:update' c.id %}" id="contact_update">
+	{% csrf_token %}
+	<table class="table">{{ form.as_table }}</table>
+	<button type="submit" class="btn btn-secondary">Update</button>
+</form>
+{% endblock "content" %}
